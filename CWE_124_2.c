@@ -1,0 +1,6 @@
+//c 124_2
+int main() {
+...
+strncpy(destBuf, &srcBuf[find(srcBuf, ch)], 1024);
+...
+}
