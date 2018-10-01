@@ -6,7 +6,7 @@
 #include <stdlib.h> /* for srand() */
 
 #include "std_testcase.h"
-#include "testcases.h"
+#include "CWE_248_testcases.h"
 
 int main(int argc, char * argv[]) {
 
