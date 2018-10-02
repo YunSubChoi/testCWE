@@ -1,4 +1,4 @@
-import os						# for current working directory path
+import os                       # for directory path
 import datetime                 # date와 time을 얻기 위해 사용
 from lxml.html import parse     # html양식으로 파싱
 from io import StringIO         # 문자열 입출력 모듈
@@ -84,8 +84,8 @@ nowDate = now.strftime('%Y%m%d-%H%M')
 fileName = 'flawfinder.html'
 
 # filePath에 html파일이 있는 경로 저장
-codePath = os.getcwd()
-filePath = codePath + '/' + fileName
+currentDir = os.getcwd()
+filePath = currentDir + '/' + fileName
 
 source = ''
 tagName = ['li', 'i']
@@ -98,4 +98,4 @@ tagText = flawfinderParsing(tag)
 
 flawfinder = Element
 flawfinder = to_tag(tagText, nowDate, 'flawfinder')
-ElementTree(flawfinder).write(codePath + '/flawfinder-' + nowDate + '.xml')
+ElementTree(flawfinder).write(currentDir + '/flawfinder-' + nowDate + '.xml')
