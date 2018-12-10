@@ -5,8 +5,13 @@ if (GetPasswordFromUser(pwd, sizeof(pwd))) {
 
 if (ConnectToMainframe(MFAddr, pwd)) {
 
-// Interaction with mainframe 
+// Interaction with mainframe
 }
 }
 memset(pwd, 0, sizeof(pwd));
 }
+//
+//
+//
+//
+//
