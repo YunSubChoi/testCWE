@@ -1,9 +1,0 @@
-//c 170_1
-
-#define MAXLEN 1024
-...
-char *pathbuf[MAXLEN];
-...
-read(cfgfile,inputbuf,MAXLEN); //does not null terminate
-strcpy(pathbuf,inputbuf); //requires null terminated input
-...
