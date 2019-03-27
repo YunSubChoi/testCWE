@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os                       # for directory path
 import datetime                 # date와 time을 얻기 위해 사용
 from lxml.html import parse     # html양식으로 파싱
