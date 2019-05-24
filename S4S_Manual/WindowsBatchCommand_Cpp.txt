@@ -1,0 +1,16 @@
+set RESORT_HOME=C:\RESORT_Plus_CPP
+set RESORT_HOME_RULE=%RESORT_HOME%\ruleset
+set SRC_PROPERTIES=%WORKSPACE%
+set HEADER_PROPERTIES=%RESORT_HOME%\samples\header.properties
+set MACRO_PROPERTIES=%RESORT_HOME%\samples\macro.properties
+
+cd  %RESORT_HOME%\bin
+
+set JOB_HOME=%JENKINS_HOME%\jobs\%JOB_NAME%
+set JOB_HOME_WORKSPACE=%WORKSPACE%
+
+set COMMAND_ANALYSIS=-disableProjectSaveMode -languageOption 2 -enableEmbeded -resolveHeaders true -applyResolvedHeaders true -Timeout 60
+
+set COMMAND_REPORT=-excelCodeCompliance %JOB_HOME_WORKSPACE%\codeCompliance_%BUILD_NUMBER%.xls   -excelCodeViolation %JOB_HOME_WORKSPACE%\CodeViolation_%BUILD_NUMBER%.xls -user ±¹º¸¿¬ -projectAlias %JOB_NAME%
+
+resortcpp.exe -cc %SRC_PROPERTIES%  %WORKSPACE%\resort.xml  -IProperties %HEADER_PROPERTIES% -macro %MACRO_PROPERTIES% -macroAll -audit %RESORT_HOME_RULE%/MISRACpp2008.rule %COMMAND_ANALYSIS% %COMMAND_REPORT%
